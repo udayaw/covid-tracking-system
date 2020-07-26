@@ -1,4 +1,4 @@
-package org.chathu.covid.api.endpoint;
+package org.chathu.covid.api.exec;
 
 import com.azure.cosmos.CosmosContainer;
 import com.azure.cosmos.CosmosDatabase;
@@ -16,10 +16,10 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Main {
-    public static void main(String args[]) throws Exception{
+    public static void main(String args[]){
 
 
-        System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()));
+//        System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()));
 
 //        Date d1 = new Date();
 //        //writeCosmos1();
@@ -130,69 +130,6 @@ public class Main {
             }
         }
     }
-
-    /**
-     * This function listens at endpoint "/api/HttpTrigger-Java". Two ways to invoke it using "curl" command in bash:
-     * 1. curl -d "HTTP Body" {your host}/api/HttpTrigger-Java
-     * 2. curl {your host}/api/HttpTrigger-Java?name=HTTP%20Query
-     */
-//    @FunctionName("HttpTrigger-Java")
-//    public HttpResponseMessage run(
-//            @HttpTrigger(name = "req", methods = {HttpMethod.POST}, authLevel = AuthorizationLevel.ANONYMOUS) HttpRequestMessage<String> request,
-//            final ExecutionContext context) {
-//
-//        JSONObject body = new JSONObject(request.getBody());
-//        String name = body.getString("name");
-//
-//
-//        //send data to event hub
-//
-//        ConnectionStringBuilder connStr = new ConnectionStringBuilder()
-//                .setNamespaceName("covid-app-location-stream")
-//                .setEventHubName("location-stream")
-//                .setSasKeyName("RootManageSharedAccessKey")
-//                .setSasKey("+1CGEnocSs5ZLZS32GZj7oXpCZZ20gjrCsHeNGE1ucc=");
-//
-//
-//
-//        // The Executor handles all asynchronous tasks and this is passed to the EventHubClient instance.
-//        // This enables the user to segregate their thread pool based on the work load.
-//        // This pool can then be shared across multiple EventHubClient instances.
-//        // The following sample uses a single thread executor, as there is only one EventHubClient instance,
-//        // handling different flavors of ingestion to Event Hubs here.
-//        ScheduledExecutorService executorService = Executors.newScheduledThreadPool(4);
-//
-//        // Each EventHubClient instance spins up a new TCP/TLS connection, which is expensive.
-//        // It is always a best practice to reuse these instances. The following sample shows this.
-//        EventHubClient ehClient = null;
-//        try {
-//            ehClient = EventHubClient.createSync(connStr.toString(), executorService);
-//            for (int i = 0; i < 10; i++) {
-//
-//                JSONObject j1 = new JSONObject();
-//                j1.put("Name", "ABC");
-//                j1.put("Name", 26);
-//                EventData sendEvent = EventData.create( j1.toString().getBytes());
-//
-//                // Send - not tied to any partition
-//                // Event Hubs service will round-robin the events across all Event Hubs partitions.
-//                // This is the recommended & most reliable way to send to Event Hubs.
-//                ehClient.sendSync(sendEvent);
-//            }
-//        } catch (EventHubException e) {
-//            e.printStackTrace();
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        } finally {
-//            try {
-//                ehClient.closeSync();
-//            } catch (EventHubException e) {
-//                e.printStackTrace();
-//            }
-//            executorService.shutdown();
-//        }
-//        return request.createResponseBuilder(HttpStatus.OK).body(name).build();
-//    }
 
 }
 
