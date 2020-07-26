@@ -3,3 +3,6 @@
 
 #Ignore MS Word Docs
 *.docx
+
+#Ignore PDF files
+*.pdf
