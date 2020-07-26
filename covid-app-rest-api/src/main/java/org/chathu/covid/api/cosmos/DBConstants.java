@@ -4,5 +4,8 @@ public class DBConstants {
     public static final String DATABASE_ID = "covid-db";
     public static final String USER_CONTAINER = "Users";
     public static final String LOCATION_HISTORY_CONTAINER = "LocationHistory";
+    public static final String COVID_LOCATION_CONTAINER = "CovidLocation";
+    public static final String COVID_SUMMARY_CONTAINER = "CovidSummary";
+
     public static final String COVID_CASE_CONTAINER = "CovidCase";
 }
