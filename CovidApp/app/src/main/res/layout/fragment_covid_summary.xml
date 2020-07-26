@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.CovidSummaryFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.gms.maps.MapView
+            android:id="@+id/covidMap"
+            android:layout_width="match_parent"
+            android:layout_height="507dp"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txtRecovered"
+            android:layout_width="113dp"
+            android:layout_height="66dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="8dp"
+            android:text="-"
+            android:textAlignment="center"
+            android:textColor="#378731"
+            android:textSize="50sp"
+            app:layout_constraintEnd_toStartOf="@+id/txtDeaths"
+            app:layout_constraintTop_toBottomOf="@+id/covidMap" />
+
+        <TextView
+            android:id="@+id/txtDeaths"
+            android:layout_width="95dp"
+            android:layout_height="71dp"
+            android:layout_marginTop="26dp"
+            android:layout_marginEnd="16dp"
+            android:text="-"
+            android:textAlignment="center"
+            android:textColor="#F67575"
+            android:textSize="50sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/covidMap" />
+
+        <TextView
+            android:id="@+id/txtConfirmed"
+            android:layout_width="111dp"
+            android:layout_height="65dp"
+            android:layout_marginTop="32dp"
+            android:text="-"
+            android:textAlignment="center"
+            android:textSize="50sp"
+            app:layout_constraintEnd_toStartOf="@+id/txtRecovered"
+            app:layout_constraintHorizontal_bias="0.65"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/covidMap" />
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:text="Confirmed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtConfirmed" />
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="64dp"
+            android:layout_marginTop="4dp"
+            android:text="Recovered"
+            app:layout_constraintEnd_toStartOf="@+id/textView9"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/textView7"
+            app:layout_constraintTop_toBottomOf="@+id/txtRecovered" />
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="36dp"
+            android:text="Deaths"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtDeaths" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

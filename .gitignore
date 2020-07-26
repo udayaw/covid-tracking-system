@@ -1,0 +1,5 @@
+#Ignore jar files
+*.jar
+
+#Ignore MS Word Docs
+*.docx

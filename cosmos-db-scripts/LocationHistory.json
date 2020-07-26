@@ -1,0 +1,11 @@
+{
+    "UserId":"test1",
+    "Timestamp":"2014-09-15T23:11:25.7251173Z",
+    "Location":{"type":"point", "coordinates":[6.877883208581049, 79.89973862310195]}
+}
+
+{
+    "userId":"test1",
+    "timestamp":"2016-09-15T23:11:25.7251173Z",
+    "location":{"type":"point", "coordinates":[6.777883208581049, 79.89973862310195]}
+}

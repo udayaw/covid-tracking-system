@@ -1,0 +1,26 @@
+{
+    "UserName":"user01",
+    "PassHash":"asdksahdkjsad",
+    "FirstName": "Udaya",
+    "LastName":"Chathuranga",
+    "DOB":"1991-01-04",
+    "LastKnownLocation":{"type":"point", "coordinates":[6.877883208581049, 79.89973862310195]},
+    "LocationHistory":[
+        {"Timestamp":"2014-09-15T23:11:25.7251173Z", "GeoHash":"A"},
+        {"Timestamp":"2014-09-15T23:12:25.7251173Z", "GeoHash":"B"},
+        {"Timestamp":"2014-09-15T23:13:25.7251173Z", "GeoHash":"C"}
+    ]
+}
+
+
+
+
+
+
+SELECT ST_DISTANCE(u.LastKnownLocation, {"type": "Point", "coordinates":[6.878017, 79.900153]})
+FROM u
+
+select c.UserName,l.Timestamp
+from c
+JOIN l in c.LocationHistory
+where l.Timestamp > "2014-09-15T23:12:25.7251173Z"
